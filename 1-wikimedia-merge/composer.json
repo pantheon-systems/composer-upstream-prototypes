@@ -23,6 +23,8 @@
     "conflict": {
         "drupal/drupal": "*"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
         "preferred-install": "dist",
         "autoloader-suffix": "Drupal8"
