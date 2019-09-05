@@ -1,0 +1,69 @@
+{
+    "name": "pantheon-systems/upstream-prototype-wikimedia",
+    "description": "CORE-1556: Prototype Composer-based upstream using Wikimedia merge plugin.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "composer/installers": "^1.2",
+        "wikimedia/composer-merge-plugin": "^1.4",
+        "drupal/core-recommended": "8.8.x-dev",
+        "drupal/core-composer-scaffold": "8.8.x-dev",
+        "greg-1-anderson/core-vendor-hardening": "dev-autoload-file-security"
+    },
+    "require-dev": {
+        "drupal/dev-dependencies": "8.8.x-dev"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "autoloader-suffix": "Drupal8"
+    },
+    "extra": {
+        "_readme": [
+            "This prototype Composer-based upstream demonstrates the use of",
+            "the Wikimedia merge plugin to include the configuration and",
+            "dependencies from the upstream, which is stored in",
+            "upstream/composer.json. When the upstream makes changes to this",
+            "file, our site will be updated via the usual 'git merge' upstream",
+            "update mechanism. After the git upstream update, 'composer update'",
+            "is used to update the dependencies in the composer.json file."
+        ],
+        "merge-plugin": {
+            "include": [
+                "upstream/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "merge-extra": true
+        },
+        "composer-scaffold": {
+            "allowed-packages": [
+                "drupal/core"
+            ],
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/drush/Commands/contrib/{$name}": ["type:drupal-drush"]
+        }
+    }
+}
