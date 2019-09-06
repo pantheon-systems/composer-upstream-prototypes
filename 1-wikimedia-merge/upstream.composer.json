@@ -1,5 +1,5 @@
 {
-    "name": "pantheon-systems/upstream-configuration",
+    "name": "internal/upstream-configuration",
     "type": "project",
     "require": {
       "drupal/pathauto": "^1"

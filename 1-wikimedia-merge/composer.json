@@ -41,7 +41,7 @@
         ],
         "merge-plugin": {
             "include": [
-                "upstream/composer.json"
+                "upstream.composer.json"
             ],
             "recurse": true,
             "replace": false,

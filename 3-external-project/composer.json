@@ -1,5 +1,5 @@
 {
-    "name": "pantheon-systems/upstream-prototype-path-repository",
+    "name": "pantheon-systems/upstream-prototype-external-project",
     "description": "CORE-1556: Prototype Composer-based upstream using Wikimedia merge plugin.",
     "type": "project",
     "license": "GPL-2.0-or-later",
@@ -7,15 +7,11 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "path",
-            "url": "upstream"
         }
     ],
     "require": {
         "php": ">=5.6",
-        "internal/upstream-configuration": "*",
+        "pantheon-systems/upstream-configuration-prototype": "*",
         "composer/installers": "^1.2",
         "drupal/core-recommended": "^8.7",
         "drupal/core-composer-scaffold": "^8.8@dev",
@@ -36,12 +32,11 @@
     "extra": {
         "_readme": [
             "This prototype Composer-based upstream demonstrates the use of",
-            "a path repository to include the configuration and dependencies",
-            "from the upstream, which is stored in upstream/composer.json. When",
-            "the upstream makes changes to this file, our site will be updated",
-            "via the usual 'git merge' upstream update mechanism. After the git",
-            "upstream update, 'composer update' is used to update the",
-            "dependencies in the composer.json file."
+            "an external project to include the configuration and dependencies",
+            "from the upstream, which is registered with Packagist. In this",
+            "model, the upstream maintainer must publish a new version of their",
+            "external project in order to distribute updated dependencies to",
+            "the sites built from this upstream."
         ],
         "composer-scaffold": {
             "allowed-packages": [
