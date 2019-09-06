@@ -5,7 +5,7 @@ This project demonstrates different options for using Composer with Pantheon
 upstreams.
 
 Use Cases
----------
+=========
 
 As a Pantheon user with a site created from a composer-based upstreamI want my site’s composer.json to include the configuration from my upstream by reference onlyso that I can focus on my site’s dependencies without the noise of the upstream’s many dependencies
 
@@ -16,9 +16,12 @@ As a Pantheon user with a site created from a composer-based upstreamI want depe
 As a Pantheon user with a site created from a composer-based upstreamI want to apply upstream updates without merge conflictsso that I can focus on my site and not resolving merge conflicts
 
 Options
--------
+=======
 
-1. Use wikimedia merge plugin
+This repository contains three alternative options for meeting our needs to use Composer with upstreams.
+
+Use wikimedia merge plugin
+--------------------------
 
 This option uses the Wikimedia merge plugin to include the upstream.composer.json from a file stored directly at the root of the upstream repository.
 
@@ -32,7 +35,8 @@ Cons:
 
 - The wikimedia merge plugin is no longer well-maintained, and projects are moving away from using it.
 
-2. Path repository from top-level composer.json to upstream/composer.json
+Path repository from top-level composer.json to upstream/composer.json
+----------------------------------------------------------------------
 
 Similar to option 1, but instead uses a path repository to include upstream/composer.json from a subfolder stored directly in the upstream repository.
 
@@ -46,7 +50,8 @@ Cons:
 - Upstream composer.json is considered a dependency, and therefore cannot set configuration properties that may only go in the root-level composer.json file.
 - The composer.json file must be named literally composer.json (no variants allowed) and must go in a subfolder.
 
-3. Require an external project from top-level composer.json
+Require an external project from top-level composer.json
+--------------------------------------------------------
 
 This option requires an external project that has been registered with Packagist.
 
