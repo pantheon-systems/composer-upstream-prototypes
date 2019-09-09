@@ -68,6 +68,6 @@ Cons:
 Recommendation
 --------------
 
-While the Wikimedia merge plugin is more flexible and meets our design criteria most closely, it should probably be avoided due to the fact that it is not well maintained, and is falling out of favor.
+While the Wikimedia merge plugin is more flexible and meets our design criteria most closely, it should probably be avoided due to the fact that it is not well maintained, and is falling out of favor. If we did want to use the Wikimedia merge plugin, it might be preferable to fork a Pantheon version, and remove any features we did not need.
 
 A path repository provides most of the benefits of the Wikimedia merge plugin, and is built with standard Composer features. It is therefore probably the preferable option, in the balance.
