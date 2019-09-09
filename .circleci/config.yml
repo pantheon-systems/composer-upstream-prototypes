@@ -10,9 +10,9 @@ jobs:
 
     steps:
       - checkout
-      - ./tests/test-upstream-install.sh 1-wikimedia-merge
-      - ./tests/test-upstream-install.sh 2-path-repository
-      - ./tests/test-upstream-install.sh 3-external-project
+      - run: ./tests/test-upstream-install.sh 1-wikimedia-merge
+      - run: ./tests/test-upstream-install.sh 2-path-repository
+      - run: ./tests/test-upstream-install.sh 3-external-project
 
 workflows:
   version: 2
