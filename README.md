@@ -4,6 +4,8 @@ Composer Upstream Prototypes
 This project demonstrates different options for using Composer with Pantheon
 upstreams.
 
+[![CircleCI](https://circleci.com/gh/pantheon-systems/composer-upstream-prototypes.svg?style=svg)](https://circleci.com/gh/pantheon-systems/composer-upstream-prototypes)
+
 Use Cases
 =========
 
