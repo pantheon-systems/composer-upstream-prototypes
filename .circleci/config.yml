@@ -1,15 +1,5 @@
 ---
 version: 2
-jobs:
-    configure_env_vars:
-        <<: *defaults
-
-        docker:
-            - image: quay.io/pantheon-public/build-tools-ci:5.x
-
-        steps:
-            - checkout
-
 
 jobs:
   test:
@@ -19,6 +9,7 @@ jobs:
     working_directory: ~/upstream-prototypes
 
     steps:
+      - checkout
       - ./tests/test-upstream-install.sh 1-wikimedia-merge
       - ./tests/test-upstream-install.sh 2-path-repository
       - ./tests/test-upstream-install.sh 3-external-project
