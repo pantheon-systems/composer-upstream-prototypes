@@ -1,0 +1,15 @@
+---
+version: 2.1
+
+jobs:
+  test:
+    steps:
+      - ./tests/test-upstream-install.sh 1-wikimedia-merge
+      - ./tests/test-upstream-install.sh 2-path-repository
+      - ./tests/test-upstream-install.sh 3-external-project
+
+workflows:
+  version: 2
+  run-tests:
+    jobs:
+      - test
