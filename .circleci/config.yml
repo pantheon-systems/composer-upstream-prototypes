@@ -2,6 +2,10 @@
 version: 2.1
 
 jobs:
+  docker:
+    - image: quay.io/pantheon-public/build-tools-ci:6.x
+  working_directory: ~/upstream-prototypes
+
   test:
     steps:
       - ./tests/test-upstream-install.sh 1-wikimedia-merge
