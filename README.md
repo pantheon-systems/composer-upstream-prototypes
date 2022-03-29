@@ -5,6 +5,8 @@ This project demonstrates different options for using Composer with Pantheon
 upstreams.
 
 [![CircleCI](https://circleci.com/gh/pantheon-systems/composer-upstream-prototypes.svg?style=svg)](https://circleci.com/gh/pantheon-systems/composer-upstream-prototypes)
+[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#deprecated)
+
 
 Use Cases
 =========
